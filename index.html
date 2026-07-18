@@ -23,20 +23,20 @@
 </head>
 
 <body class="w-[80%] mx-auto">
-    <header>
+    <header class="sticky top-0 z-50 bg-white">
         <h1 class="font-bold text-4xl py-3">Job Application Tracker</h1>
         <div class="grid grid-cols-3  gap-4 bg-stroke py-2 px-2">
-            <div class="shadow-sm py-2 px-2">
-                <p>Total</p>
-                <p id="total" class="text-black font-semibold">0</p>
+            <div class="shadow-sm py-5 px-3">
+                <p class="font-semibold">Total</p>
+                <p id="total" class="text-black font-semibold text-xl">0</p>
             </div>
-            <div class="shadow-sm py-2 px-2">
-                <p>Interview</p>
-                <p id="total" class="text-green-300 font-semibold">0</p>
+            <div class="shadow-sm py-2 px-3">
+                <p class="font-semibold">Interview</p>
+                <p id="interview" class="text-green-400 font-semibold text-xl">0</p>
             </div>
-            <div class="shadow-sm py-2 px-2">
-                <p>Rejected</p>
-                <p id="total" class="text-red-300 font-semibold">0</p>
+            <div class="shadow-sm py-2 px-3">
+                <p class="font-semibold">Rejected</p>
+                <p id="rejected" class="text-red-400 font-semibold text-xl">0</p>
             </div>
         </div>
     </header>
@@ -48,16 +48,25 @@
             <div>
                 <h2 class="font-medium">Available Jobs</h2>
             </div>
-            <div>
-                <p id="job-number">0 Jobs</p>
+            <div class="flex gap-1 px-2 font-semibold">
+                <p id="job">0 </p>
+                <p>Jobs</p>
             </div>
         </div>
-        <div class="flex gap-3 py-2">
-            <button id="all-filter-btn" class="btn btn-primary py-2 shadow-sm px-5">All</button>
-            <button id="interview-filter-btn" class="btn py-2 shadow-sm px-2">Interview</button>
-            <button id="rejcted-filter-btn" class="btn px-2 py-2 shadow-sm">Rejected</button>
+
+        <div class="flex gap-3 py-2 sticky top-0 z-50 bg-white">
+            <button onclick="activeBtn('all-filter-btn')" id="all-filter-btn"
+                class="btn  btn-primary py-2 shadow-sm px-5">All</button>
+            <button onclick="activeBtn('interview-filter-btn')" id="interview-filter-btn"
+                class="btn py-2 shadow-sm px-2">Interview</button>
+            <button onclick="activeBtn('rejcted-filter-btn')" id="rejcted-filter-btn"
+                class="btn px-2 py-2 shadow-sm">Rejected</button>
         </div>
-        <section id="all-card" class="mt-2 space-y-6">
+        <section id="filter-section" class="mt-2 space-y-6 hidden">
+
+        </section>
+
+        <section id="all-card" class=" mt-2 space-y-6">
             <!-- card 1 -->
             <div class="flex justify-between p-5 shadow-sm ">
                 <div class="left space-y-5">
@@ -67,15 +76,16 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT
+                            APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -93,15 +103,15 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -119,15 +129,15 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -145,15 +155,15 @@
                     </div>
                     <p class="location">📍 San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -171,15 +181,15 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -197,15 +207,15 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -223,15 +233,15 @@
                     </div>
                     <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -249,15 +259,15 @@
                     </div>
                     <p class="location">📍 San Francisco, CA • Full-time • $110,000 - $145,000</p>
                     <div>
-                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                        <button class="application btn btn-secondary text-black bg-slate-200">NOT APPLIED</button>
                     </div>
                     <div>
                         <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
                             Collaborate with designers to create fast and modern user interfaces.</p>
                     </div>
                     <div>
-                        <button class="btn interview">INTERVIEW</button>
-                        <button class="btn rejected">REJECTED</button>
+                        <button class="btn btn-primary interview">INTERVIEW</button>
+                        <button class="btn btn-error rejected">REJECTED</button>
                     </div>
                 </div>
                 <div class="right">
@@ -272,7 +282,7 @@
 
 
     </main>
-
+    <script src="job.js"></script>
 </body>
 
 </html>
