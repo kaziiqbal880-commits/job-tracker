@@ -21,9 +21,257 @@
         }
     </style>
 </head>
-<h1>wellcome to job Tracker</h1>
 
-<body>
+<body class="w-[80%] mx-auto">
+    <header>
+        <h1 class="font-bold text-4xl py-3">Job Application Tracker</h1>
+        <div class="grid grid-cols-3  gap-4 bg-stroke py-2 px-2">
+            <div class="shadow-sm py-2 px-2">
+                <p>Total</p>
+                <p id="total" class="text-black font-semibold">0</p>
+            </div>
+            <div class="shadow-sm py-2 px-2">
+                <p>Interview</p>
+                <p id="total" class="text-green-300 font-semibold">0</p>
+            </div>
+            <div class="shadow-sm py-2 px-2">
+                <p>Rejected</p>
+                <p id="total" class="text-red-300 font-semibold">0</p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="border-gray-200 my-5">
+    <main>
+
+        <div class="flex justify-between my-3">
+            <div>
+                <h2 class="font-medium">Available Jobs</h2>
+            </div>
+            <div>
+                <p id="job-number">0 Jobs</p>
+            </div>
+        </div>
+        <div class="flex gap-3 py-2">
+            <button id="all-filter-btn" class="btn btn-primary py-2 shadow-sm px-5">All</button>
+            <button id="interview-filter-btn" class="btn py-2 shadow-sm px-2">Interview</button>
+            <button id="rejcted-filter-btn" class="btn px-2 py-2 shadow-sm">Rejected</button>
+        </div>
+        <section id="all-card" class="mt-2 space-y-6">
+            <!-- card 1 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">TechNova Solutions</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Frontend Developer</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">CloudFirst Inc</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Backend Developer</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">PixelWorks Studio</h2>
+                        <p class="role text-black-100 mt-2 text-lg">UI/UX Designer</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 4 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">DataVision Analytics</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Data Analyst</p>
+                    </div>
+                    <p class="location">📍 San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">SecureNet Systems</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Cybersecurity Analyst</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">AI Future Labs</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Machine Learning Engineer</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 7 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">DevOps Hub</h2>
+                        <p class="role text-black-100 mt-2 text-lg">DevOps Engineer</p>
+                    </div>
+                    <p class="location">📍San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 8 -->
+            <div class="flex justify-between p-5 shadow-sm ">
+                <div class="left space-y-5">
+                    <div>
+                        <h2 class="company font-semibold text-4xl">CodeCraft Technologies</h2>
+                        <p class="role text-black-100 mt-2 text-lg">Full Stack Developer</p>
+                    </div>
+                    <p class="location">📍 San Francisco, CA • Full-time • $110,000 - $145,000</p>
+                    <div>
+                        <button class="btn bg-slate-200">NOT APPLIED</button>
+                    </div>
+                    <div>
+                        <p class="detail">Build responsive web applications using React, JavaScript, and Tailwind CSS.
+                            Collaborate with designers to create fast and modern user interfaces.</p>
+                    </div>
+                    <div>
+                        <button class="btn interview">INTERVIEW</button>
+                        <button class="btn rejected">REJECTED</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+    </main>
 
 </body>
 
