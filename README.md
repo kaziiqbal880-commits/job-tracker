@@ -1,9 +1,3 @@
-## Welcome To ( সহজ সরল সিম্পল ) Assignment - 4 
-
-
----
-# 📅 No Deadline For 60 marks <span style="color: #22c55e;">( যেকোনো সময়ে সাবমিট করলেই ৬০ মার্কে কাউন্ট হবে এবং এর জন্য কোনো লাইফ ব্যবহার করতে হবে না)</span>
-
 
 # Main Requirements
 
